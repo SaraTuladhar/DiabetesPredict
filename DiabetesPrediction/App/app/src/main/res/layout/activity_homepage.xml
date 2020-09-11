@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Homepage"
+    android:background="@drawable/homepage_back"
+    android:orientation="vertical">
+
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    tools:ignore="MissingConstraints"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="270dp"
+        android:fontFamily="sans-serif-thin"
+        android:gravity="center"
+        android:text="Predict Your Diabetes"
+        android:textColor="@color/colorPrimary"
+        android:textSize="50sp"></TextView>
+</LinearLayout>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <Button
+        android:id="@+id/Glucose_info"
+        android:layout_width="20dp"
+        android:layout_height="100dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="300dp"
+        android:layout_marginRight="0dp"
+        android:layout_weight="1"
+        android:background="#FFFF"
+        android:gravity="center"
+        android:text="Glucose ⓘ"
+        android:drawableTop="@mipmap/inulinlogo"
+        android:textSize="17sp" />
+    <Button
+        android:id="@+id/Pressure_info"
+        android:layout_width="20dp"
+        android:layout_height="100dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="300dp"
+        android:layout_marginRight="0dp"
+        android:layout_weight="1"
+        android:background="#FFFF"
+        android:drawableTop="@mipmap/bplogo"
+        android:gravity="center"
+        android:text="Pressure ⓘ"
+        android:textSize="17sp" />
+
+
+    <Button
+        android:id="@+id/BMI_info"
+        android:layout_width="20dp"
+        android:layout_height="100dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="300dp"
+        android:layout_marginRight="20dp"
+        android:layout_weight="1"
+        android:background="#FFFF"
+        android:drawableTop="@mipmap/bmilogo"
+        android:gravity="center"
+        android:text="BMI ⓘ"
+        android:textSize="17sp" />
+</LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/Preggo_info"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="80dp"
+            android:layout_marginTop="430dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:background="#FFFF"
+            android:drawableTop="@mipmap/pegnantlogo"
+            android:gravity="center"
+            android:text="Pregnancy ⓘ"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/Pedigree_info"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="430dp"
+            android:layout_marginRight="80dp"
+            android:layout_weight="1"
+            android:background="#FFFF"
+            android:drawableTop="@mipmap/pedigreelogo"
+            android:gravity="center"
+            android:text="Pedigree ⓘ"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+
+    <Button
+    android:id="@+id/PredictNow"
+    android:layout_width="100dp"
+    android:layout_height="70dp"
+    android:layout_centerHorizontal="true"
+    android:layout_marginTop="560dp"
+    android:backgroundTint="@color/colorPrimary"
+    android:text="Predict Now" />
+
+</RelativeLayout>
