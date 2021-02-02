@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "32431800828",
+    "firebase_url": "https://diabetesprediction-4045d.firebaseio.com",
+    "project_id": "diabetesprediction-4045d",
+    "storage_bucket": "diabetesprediction-4045d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:32431800828:android:8fa1265ec8fe5fcbd0f279",
+        "android_client_info": {
+          "package_name": "com.example.diabetesprediction"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "32431800828-vbel1gmdevkt605uppme5d1dcjn12g5q.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.diabetesprediction",
+            "certificate_hash": "c2291d2c0dd29e0b389a222f76e6d38d32f804a9"
+          }
+        },
+        {
+          "client_id": "32431800828-1gc4dk82tsqol7aegdh19d4up4libkmv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAwjSp4XSImQ1TN-i5BiKoDxXqHbuo72vA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "32431800828-1gc4dk82tsqol7aegdh19d4up4libkmv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

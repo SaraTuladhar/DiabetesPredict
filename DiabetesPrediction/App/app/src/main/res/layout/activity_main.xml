@@ -4,55 +4,51 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:background="@drawable/homepage_back">
+    android:background="@drawable/homepage_back"
+    tools:context=".MainActivity">
 
     <Button
         android:id="@+id/predictButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="52dp"
-        android:layout_marginBottom="88dp"
+        android:layout_marginBottom="56dp"
         android:backgroundTint="@color/colorPrimary"
         android:text="Predict"
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.678"
+        app:layout_constraintHorizontal_bias="0.693"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/pregnancyInput"
+        app:layout_constraintVertical_bias="0.641" />
 
     <Button
         android:id="@+id/tobmicalc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="52dp"
-        android:layout_marginBottom="88dp"
+        android:layout_marginBottom="56dp"
         android:backgroundTint="@color/colorAccent"
         android:text="Calculate BMI"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.223"
+        app:layout_constraintHorizontal_bias="0.187"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.68" />
 
     <EditText
         android:id="@+id/ageInput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="173dp"
-        android:layout_marginLeft="173dp"
-        android:layout_marginTop="104dp"
+        android:layout_marginTop="76dp"
         android:layout_marginEnd="25dp"
-        android:layout_marginRight="25dp"
         android:ems="10"
         android:hint="Years"
         android:inputType="textPersonName"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.333"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -67,6 +63,7 @@
         android:layout_marginRight="25dp"
         android:ems="10"
         android:inputType="textPersonName"
+        android:hint="(70-140) in mg/dL"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -99,7 +96,7 @@
         android:layout_marginEnd="25dp"
         android:layout_marginRight="25dp"
         android:ems="10"
-        android:hint="in mm Hg"
+        android:hint="(Systolic 100-120) in mm Hg"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -116,7 +113,7 @@
         android:layout_marginEnd="25dp"
         android:layout_marginRight="25dp"
         android:ems="10"
-        android:hint="mu/ ml "
+        android:hint="(16-25) Kg/cm "
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -133,7 +130,7 @@
         android:layout_marginEnd="25dp"
         android:layout_marginRight="25dp"
         android:ems="10"
-        android:hint="    mm"
+        android:hint="(20-40) mm"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -150,7 +147,7 @@
         android:layout_marginEnd="25dp"
         android:layout_marginRight="25dp"
         android:ems="10"
-        android:hint="mu/ ml"
+        android:hint="<(174) pmol/L"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -162,26 +159,31 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="173dp"
-        android:layout_marginLeft="173dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="68dp"
         android:layout_marginEnd="25dp"
-        android:layout_marginRight="25dp"
         android:ems="10"
+        android:hint="Enter 0 if you are male"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.333"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/dpfInput" />
+<RadioGroup
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    tools:ignore="MissingConstraints">
+
+</RadioGroup>
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="220dp"
-        android:text="Blood Pressure:"
+        android:layout_marginTop="192dp"
+        android:text="Blood Pressure :"
         android:textSize="18sp"
         app:layout_constraintEnd_toStartOf="@+id/bpInput"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.382"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -189,11 +191,11 @@
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="276dp"
+        android:layout_marginTop="244dp"
         android:text="Body Mass Index:"
         android:textSize="18sp"
         app:layout_constraintEnd_toStartOf="@+id/bmiInput"
-        app:layout_constraintHorizontal_bias="0.558"
+        app:layout_constraintHorizontal_bias="0.593"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -201,7 +203,7 @@
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="328dp"
+        android:layout_marginTop="296dp"
         android:text="Insulin:"
         android:textSize="18sp"
         app:layout_constraintEnd_toStartOf="@+id/insulinInput"
@@ -213,11 +215,11 @@
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="388dp"
+        android:layout_marginTop="352dp"
         android:text="Skin Fold Thickness:"
         android:textSize="16sp"
         app:layout_constraintEnd_toStartOf="@+id/skinThickInput"
-        app:layout_constraintHorizontal_bias="0.615"
+        app:layout_constraintHorizontal_bias="0.642"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -225,11 +227,11 @@
         android:id="@+id/textView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="440dp"
+        android:layout_marginTop="412dp"
         android:text="Pedigree Function"
         android:textSize="18sp"
         app:layout_constraintEnd_toStartOf="@+id/dpfInput"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.62"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -238,12 +240,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="116dp"
+        android:layout_marginTop="88dp"
         android:text="Age:"
         android:textSize="18sp"
         app:layout_constraintEnd_toStartOf="@+id/ageInput"
-        app:layout_constraintHorizontal_bias="0.098"
+        app:layout_constraintHorizontal_bias="0.016"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -251,11 +252,11 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="168dp"
-        android:text="Plasma Glucose:"
+        android:layout_marginTop="148dp"
+        android:text="Glucose:"
         android:textSize="18sp"
         app:layout_constraintEnd_toStartOf="@+id/glucoseInput"
-        app:layout_constraintHorizontal_bias="0.475"
+        app:layout_constraintHorizontal_bias="0.153"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -263,12 +264,45 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="500dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="528dp"
         android:text="No. of Pregnancy"
         android:textSize="18sp"
         app:layout_constraintEnd_toStartOf="@+id/editText"
         app:layout_constraintHorizontal_bias="0.513"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Gender"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@+id/textView7"
+        tools:layout_editor_absoluteX="27dp" />
+
+    <RadioButton
+        android:id="@+id/radioButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="112dp"
+        android:layout_marginTop="16dp"
+        android:text="Male"
+        app:layout_constraintStart_toEndOf="@+id/textView14"
+        app:layout_constraintTop_toBottomOf="@+id/dpfInput"
+        tools:ignore="MissingConstraints" />
+
+    <RadioButton
+        android:id="@+id/radioButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="16dp"
+
+        android:text="Female"
+        app:layout_constraintStart_toEndOf="@+id/radioButton"
+        app:layout_constraintTop_toBottomOf="@+id/dpfInput" />
 </androidx.constraintlayout.widget.ConstraintLayout>
 
