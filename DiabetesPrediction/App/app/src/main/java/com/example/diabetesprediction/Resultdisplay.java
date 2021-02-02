@@ -35,16 +35,15 @@ FirebaseAuth mAuth;
                 startActivity(intent);
             }
         });
-/*
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
               mAuth.getInstance().signOut();
-                Intent i = new Intent(Resultdisplay.this, login.class);
-                startActivity(i);
+              finish();
+              Intent i = new Intent(Resultdisplay.this, login.class);
+              startActivity(i);
             }
         });
-*/
 
     }
 }
