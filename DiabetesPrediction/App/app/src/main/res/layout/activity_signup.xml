@@ -12,21 +12,12 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="52dp"
         android:text="GO"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:textColor="@color/White"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/signuppw2" />
-
-    <TextView
-        android:id="@+id/tologin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:text="ALREADY HAVE AN ACCOUNT? LOGIN"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/signupreg" />
 
     <EditText
         android:id="@+id/signuppw1"
@@ -36,8 +27,10 @@
         android:ems="10"
         android:hint="Password"
         android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/signupmailid"
-        tools:layout_editor_absoluteX="100dp"
         tools:ignore="MissingConstraints" />
 
     <EditText
@@ -47,9 +40,11 @@
         android:ems="10"
         android:hint="Re-enter same Password"
         android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/signuppw1"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="100dp" />
+        tools:ignore="MissingConstraints" />
 
     <EditText
         android:id="@+id/fullname"
@@ -58,11 +53,13 @@
         android:layout_marginTop="68dp"
         android:ems="10"
         android:hint="Full Name"
-        android:inputType="textPersonName"
+        android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView15" />
+        app:layout_constraintTop_toBottomOf="@+id/textView15"
+        tools:ignore="MissingConstraints"
+        />
 
     <EditText
         android:id="@+id/signupmailid"
@@ -71,8 +68,10 @@
         android:ems="10"
         android:hint="Email"
         android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/SignupUsername"
-        tools:layout_editor_absoluteX="100dp"
         tools:ignore="MissingConstraints" />
 
     <EditText
@@ -81,10 +80,23 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Username"
-        android:inputType="textPassword"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/fullname"
-        tools:layout_editor_absoluteX="100dp"
         tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/tologin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:text="ALREADY HAVE AN ACCOUNT? LOGIN"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/signupreg" />
 
     <TextView
         android:id="@+id/textView15"
@@ -95,7 +107,7 @@
         android:text="WELCOME,"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.376"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -103,10 +115,12 @@
         android:id="@+id/textView19"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
         android:text="SignUp to a new health Journey!"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.417"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="181dp"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toBottomOf="@+id/textView15" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

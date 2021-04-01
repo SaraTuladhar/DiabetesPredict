@@ -101,17 +101,32 @@
             android:gravity="center"
             android:text="Pedigree ⓘ"
             android:textSize="16sp" />
+
     </LinearLayout>
 
 
     <Button
-    android:id="@+id/PredictNow"
-    android:layout_width="100dp"
-    android:layout_height="70dp"
-    android:layout_centerHorizontal="true"
-    android:layout_marginTop="560dp"
-    android:backgroundTint="@color/colorPrimary"
-    android:text="Predict Now" />
+        android:id="@+id/PredictNow"
+        android:layout_width="100dp"
+        android:layout_height="70dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="560dp"
+        android:backgroundTint="@color/colorPrimary"
+        android:text="Predict Now"
+        android:textColor="@color/White" />
+
+    <Button
+        android:id="@+id/PredictNow1"
+        android:layout_width="100dp"
+        android:layout_height="70dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="560dp"
+        android:layout_marginEnd="14dp"
+        android:layout_toStartOf="@+id/PredictNow"
+        android:backgroundTint="@color/colorPrimary"
+        android:text="System"
+        android:textColor="@color/White" />
 
     <TextView
         android:id="@+id/Profilebtn"
@@ -120,9 +135,11 @@
         android:layout_below="@+id/PredictNow"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="145dp"
+        android:layout_marginStart="164dp"
         android:layout_marginTop="24dp"
-        android:layout_marginEnd="151dp"
-        android:text="Check Your Profile" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginEnd="132dp"
+        android:text="Check Your Profile"
+        android:textColor="@color/White" />
 
 </RelativeLayout>

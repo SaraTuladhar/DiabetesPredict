@@ -9,16 +9,17 @@
 
     <Button
         android:id="@+id/loginbutton"
-        android:backgroundTint="@color/colorPrimary"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/forgotbutton"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="141dp"
-        android:layout_marginTop="51dp"
-        android:layout_marginEnd="182dp"
+        android:layout_marginStart="161.5dp"
+        android:layout_marginTop="93dp"
+        android:layout_marginEnd="161.5dp"
+        android:backgroundTint="@color/colorPrimary"
         android:text="GO"
+        android:textColor="#FFFFFF"
         app:layout_constraintTop_toBottomOf="@+id/forgotbutton"
         tools:ignore="HardcodedText,MissingConstraints"
         tools:layout_editor_absoluteX="194dp" />
@@ -32,6 +33,7 @@
         android:layout_marginTop="55dp"
         android:layout_marginEnd="20dp"
         android:text="Forgot Password?"
+        android:textColor="#808080"
         android:textSize="16sp"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="258dp"
@@ -42,14 +44,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/loginbutton"
+        android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
+        android:layout_marginStart="135dp"
         android:layout_marginTop="96dp"
-        android:layout_marginEnd="149dp"
+        android:layout_marginEnd="145dp"
         android:text="NEW USER? SIGN UP"
-        app:layout_constraintTop_toBottomOf="@+id/loginbutton"
+        android:textColor="#FFFFFF"
 
+        app:layout_constraintTop_toBottomOf="@+id/loginbutton"
         tools:ignore="MissingConstraints,OnClick"
-        tools:layout_editor_absoluteX="167dp" />
+        tools:layout_editor_absoluteX="155dp" />
 
 
     <EditText
@@ -120,8 +125,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView18"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="31dp"
-        android:layout_marginTop="49dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="54dp"
         android:text="Email"
         android:textSize="18sp"
         tools:layout_editor_absoluteX="46dp"
@@ -133,8 +138,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView16"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="31dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginStart="34dp"
+        android:layout_marginTop="32dp"
         android:text="Password"
         android:textSize="18sp"
         tools:layout_editor_absoluteX="46dp"

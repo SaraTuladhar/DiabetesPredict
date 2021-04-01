@@ -21,6 +21,8 @@ FirebaseAuth mAuth;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_resultdisplay);
         logout = findViewById(R.id.logout);
+        predictagain = findViewById(R.id.predictagain);
+
 
         Intent intent= getIntent();
         String result= intent.getStringExtra(MainActivity.EXTRA_TEXT);

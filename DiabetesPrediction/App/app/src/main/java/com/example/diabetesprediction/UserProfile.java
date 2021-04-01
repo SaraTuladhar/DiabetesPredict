@@ -26,14 +26,14 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class UserProfile extends AppCompatActivity {
-    TextView ProfilesignupName,  ProfilesignupEmail, ProfileAge;
+    TextView ProfilesignupName,  ProfilesignupEmail;
     Button Backtopredict;
     FirebaseAuth mAuth;
     FirebaseDatabase db;
     DatabaseReference reference;
     FirebaseUser fuser;
     User user;
-    private FirebaseAuth.AuthStateListener myAuthStateListener;
+    private FirebaseAuth.AuthStateListener   myAuthStateListener;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,24 +41,24 @@ public class UserProfile extends AppCompatActivity {
                 // Hooking
         ProfilesignupName = (TextView) findViewById(R.id.proname);
         ProfilesignupEmail = (TextView) findViewById(R.id.promail);
-        ProfileAge = (TextView) findViewById(R.id.proage);
         Backtopredict = (Button) findViewById(R.id.backtopredict);
         mAuth = FirebaseAuth.getInstance();
         db = FirebaseDatabase.getInstance();
-     /*  reference.getRef(mAuth.getUid());*/
+      reference.getRef(mAuth.getUid());
 
-       /*reference.addValueEventListener(new ValueEventListener() {
+       reference.addValueEventListener(new ValueEventListener() {
            @Override
            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-               ProActivity userprofile = dataSnapshot.getValue(ProActivity.class);
-               ProfilesignupName.setText();
+               UserHelperClass userprofile = dataSnapshot.getValue(UserHelperClass.class);
+               ProfilesignupName.setText("Name: "+UserHelperClass.getSignupName());
+               ProfilesignupEmail.setText("Email: " +UserHelperClass.getSignupEmail());
            }
 
            @Override
            public void onCancelled(@NonNull DatabaseError databaseError) {
-
+Toast.makeText(UserProfile.this, databaseError.getCode(),Toast.LENGTH_SHORT);
            }
-       });*/
+       });
         DatabaseReference rootRef = db.getReference();
        /* DownloadManager.Query query = rootRef.child("User").orderByChild("signupEmail").equalsTo(String.valueOf(fuser.getEmail()));
         ValueEventListener valueEventListener = new ValueEventListener() {

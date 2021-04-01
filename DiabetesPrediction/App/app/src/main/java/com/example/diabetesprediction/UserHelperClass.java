@@ -1,11 +1,10 @@
 package com.example.diabetesprediction;
 
 public class UserHelperClass {
-    String signupName, signupUsername, signupEmail, signupPassword;
+    public String signupName, signupEmail;
 
         public UserHelperClass(){
-
-        }
+        }/*
     public UserHelperClass(String signupName, String signupUsername, String signupEmail, String signupPassword) {
         this.signupName = signupName;
         this.signupUsername = signupUsername;
@@ -43,5 +42,22 @@ public class UserHelperClass {
 
     public void setSignupPassword(String signupPassword) {
         this.signupPassword = signupPassword;
+    }
+*/
+
+    public static String getSignupName() {
+        return signupName;
+    }
+
+    public void setSignupName(String signupName) {
+        this.signupName = signupName;
+    }
+
+    public static String getSignupEmail() {
+        return signupEmail;
+    }
+
+    public void setSignupEmail(String signupEmail) {
+        this.signupEmail = signupEmail;
     }
 }

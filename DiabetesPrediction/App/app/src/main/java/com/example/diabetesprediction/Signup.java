@@ -99,6 +99,7 @@ public class Signup extends AppCompatActivity {
                                     } else {
                                         Toast.makeText(Signup.this, "Account has been made", Toast.LENGTH_LONG).show();
                                         mAuth.getInstance().signOut();
+                                        Toast.makeText(Signup.this, "Account has been made", Toast.LENGTH_LONG).show();
                                         Intent intToLogIn = new Intent(Signup.this, login.class);
                                         startActivity(intToLogIn);
 

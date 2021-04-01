@@ -7,15 +7,15 @@
     android:layout_height="match_parent"
     tools:context=".UserProfile">
 
+
     <Button
         android:id="@+id/backtopredict"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:text="Predict Again"
+        android:layout_marginTop="144dp"
         android:backgroundTint="@color/colorPrimary"
+        android:text="Predict Again"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/proage" />
 
@@ -28,22 +28,34 @@
 
     <TextView
         android:id="@+id/proname"
-        android:layout_width="7dp"
-        android:layout_height="47dp"
-        android:layout_marginTop="208dp"
-        android:hint="Your Name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="96dp"
+        android:text="Name: Sara"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.123"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/textView22" />
 
     <TextView
         android:id="@+id/promail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
-        android:text="Your Mail id used will be displayed here!"
+        android:layout_marginTop="32dp"
+        android:text="Email: sara@gmail.com"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.159"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/proname" />
+
+    <TextView
+        android:id="@+id/proage4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="152dp"
+        android:text="Result: Positive"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.137"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/proname" />
 
@@ -51,10 +63,32 @@
         android:id="@+id/proage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="164dp"
-        android:text="Age will be displayed here!"
+        android:layout_marginTop="120dp"
+        android:text="Age: 82"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.137"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/proname" />
+
+    <TextView
+        android:id="@+id/proage8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="228dp"
+        android:text="Result: Negative"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.132"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/proname" />
+
+    <TextView
+        android:id="@+id/proage2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="196dp"
+        android:text="Age: 42"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.137"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/proname" />
 
@@ -63,10 +97,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="Your Profile"
-        android:text="TextView"
+        android:text="Hello Sara"
         android:textColor="@color/colorAccent"
         android:textSize="24sp"
         tools:layout_editor_absoluteX="50dp"
-        tools:layout_editor_absoluteY="114dp" />
+        tools:layout_editor_absoluteY="114dp"
+        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

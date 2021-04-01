@@ -21,23 +21,24 @@
             app:srcCompat="@drawable/logo" />
 
 
+        ©
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:layout_alignParentBottom="true"
-            android:layout_marginBottom="129dp"
+            android:layout_marginBottom="154dp"
             android:fontFamily="sans-serif-thin"
             android:gravity="center"
             android:text="Diabetes Prediction"
             android:textColor="@color/colorPrimary"
             android:textSize="50sp"></TextView>
-        ©
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="300dp"
             android:layout_alignParentBottom="true"
-            android:layout_marginBottom="2dp"
+            android:layout_marginBottom="26dp"
             android:fontFamily="sans-serif-thin"
             android:gravity="center"
             android:text="©Groupproduction"
