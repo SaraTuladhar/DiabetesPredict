@@ -26,7 +26,7 @@ public class Homepage extends AppCompatActivity {
         pressure_btn= (Button) findViewById(R.id.Pressure_info);
         preggo_btn= (Button) findViewById(R.id.Preggo_info);
         pedigree_btn= (Button) findViewById(R.id.Pedigree_info);
-        profilebtn=(TextView)findViewById(R.id.Profilebtn);
+        profilebtn=(Button)findViewById(R.id.Profilebtn);
 
         predictnow.setOnClickListener(new View.OnClickListener() {
             @Override

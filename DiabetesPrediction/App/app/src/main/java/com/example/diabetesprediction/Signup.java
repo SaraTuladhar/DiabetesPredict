@@ -26,6 +26,7 @@ public class Signup extends AppCompatActivity {
     FirebaseAuth mAuth;
     DatabaseReference reference;
     User user;
+    String uid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -87,8 +88,8 @@ public class Signup extends AppCompatActivity {
                     user.setSignupEmail(signupEmail.getText().toString().trim());
                     user.setSignupPassword(signupPassword.getText().toString().trim());
                     user.setSignupPassword2(signupPassword2.getText().toString().trim());
-                    String key = reference.child("User").push().getKey();
-                    reference.child(key).setValue(user);
+                    //String key = reference.child("User").push().getKey();
+
                     /*String key2 = reference.child("Data").push().getKey();*/
                     /*reference.child(key2).setValue(user);*/
                     mAuth.createUserWithEmailAndPassword(Email, Password2).addOnCompleteListener(Signup.this, new OnCompleteListener<AuthResult>() {
@@ -96,8 +97,12 @@ public class Signup extends AppCompatActivity {
                                 public void onComplete(@NonNull Task<AuthResult> task) {
                                     if (!task.isSuccessful()) {
                                         Toast.makeText(Signup.this, "SignUp error occurred", Toast.LENGTH_LONG).show();
+
                                     } else {
                                         Toast.makeText(Signup.this, "Account has been made", Toast.LENGTH_LONG).show();
+                                        uid = mAuth.getUid();
+                                        Log.d("UID", "onComplete: "+mAuth.getUid());
+                                        reference.child(uid).setValue(user);
                                         mAuth.getInstance().signOut();
                                         Toast.makeText(Signup.this, "Account has been made", Toast.LENGTH_LONG).show();
                                         Intent intToLogIn = new Intent(Signup.this, login.class);

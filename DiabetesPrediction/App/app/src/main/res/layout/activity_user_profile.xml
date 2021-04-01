@@ -1,107 +1,159 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/defsef"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UserProfile">
+    android:background="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:padding="20dp"
+            >
+
+            <TextView
+                android:id="@+id/userFullName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Name"
+                android:textSize="26sp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:includeFontPadding="false"
+                />
+
+            <TextView
+                android:id="@+id/userEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="E-mail"
+                android:includeFontPadding="false"
+                android:textSize="20sp"
+                android:layout_below="@+id/userFullName"
+                android:layout_marginLeft="10dp"
+                />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:orientation="vertical">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Full Name"
+                android:layout_marginBottom="10dp"
+                android:clickable="false"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:longClickable="false"
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:editable="false"
+                    android:clickable="false"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/fullName"
+                    android:inputType="none"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:longClickable="false"
+                    />
 
 
-    <Button
-        android:id="@+id/backtopredict"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="144dp"
-        android:backgroundTint="@color/colorPrimary"
-        android:text="Predict Again"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/proage" />
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="E-mail"
+                android:layout_marginBottom="10dp"
+                android:clickable="false"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:longClickable="false"
+                >
 
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:ignore="MissingConstraints">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:editable="false"
+                    android:clickable="false"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/email"
+                    android:longClickable="false"
+                    />
 
-    </RelativeLayout>
 
-    <TextView
-        android:id="@+id/proname"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="96dp"
-        android:text="Name: Sara"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.123"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView22" />
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Contact"
+                android:layout_marginBottom="10dp"
+                android:clickable="false"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:longClickable="false"
+                >
 
-    <TextView
-        android:id="@+id/promail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="Email: sara@gmail.com"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.159"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/proname" />
+                <com.google.android.material.textfield.TextInputEditText
+                    android:editable="false"
+                    android:clickable="false"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/contact"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:longClickable="false"
+                    />
 
-    <TextView
-        android:id="@+id/proage4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="152dp"
-        android:text="Result: Positive"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.137"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/proname" />
 
-    <TextView
-        android:id="@+id/proage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="120dp"
-        android:text="Age: 82"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.137"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/proname" />
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Date of Birth"
+                android:layout_marginBottom="10dp"
+                android:clickable="false"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:longClickable="false"
+                >
 
-    <TextView
-        android:id="@+id/proage8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="228dp"
-        android:text="Result: Negative"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.132"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/proname" />
+                <com.google.android.material.textfield.TextInputEditText
+                    android:editable="false"
+                    android:clickable="false"
+                    android:textCursorDrawable="@null"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/DOB"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:longClickable="false"
+                    />
 
-    <TextView
-        android:id="@+id/proage2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="196dp"
-        android:text="Age: 42"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.137"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/proname" />
 
-    <TextView
-        android:id="@+id/textView22"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="Your Profile"
-        android:text="Hello Sara"
-        android:textColor="@color/colorAccent"
-        android:textSize="24sp"
-        tools:layout_editor_absoluteX="50dp"
-        tools:layout_editor_absoluteY="114dp"
-        tools:ignore="MissingConstraints" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Back to Predict"
+                android:id="@+id/backtopredict"/>
+
+
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

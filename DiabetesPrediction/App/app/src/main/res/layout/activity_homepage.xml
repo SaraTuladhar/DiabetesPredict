@@ -128,17 +128,17 @@
         android:text="System"
         android:textColor="@color/White" />
 
-    <TextView
+    <Button
         android:id="@+id/Profilebtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/PredictNow"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="164dp"
-        android:layout_marginTop="24dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginEnd="132dp"
+        android:layout_marginStart="270dp"
+        android:layout_marginTop="-64dp"
+        android:layout_marginEnd="26dp"
         android:text="Check Your Profile"
         android:textColor="@color/White" />
 
