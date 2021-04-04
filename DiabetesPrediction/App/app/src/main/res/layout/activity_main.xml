@@ -31,7 +31,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
             android:ems="10"
-            android:hint="Years"
+            android:hint="  Years"
             android:inputType="number"
             android:textSize="18sp" />
     </LinearLayout>
@@ -54,7 +54,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="(70-140) in mg/dL"
+            android:hint=" (70-140) in mg/dL"
             android:inputType="numberDecimal"
             
             android:layout_marginTop="30dp"/>
@@ -79,7 +79,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint=""
+            android:hint="  0-1"
             android:inputType="numberDecimal"
             
             android:layout_marginTop="30dp"/>
@@ -129,7 +129,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="(16-25) Kg/cm "
+            android:hint="  (16-25) Kg/cm "
             android:inputType="number"
             
             android:layout_marginTop="30dp"/>
@@ -153,7 +153,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="(20-40) mm"
+            android:hint="  (20-40) mm"
             android:inputType="number"
             
             android:layout_marginTop="30dp"/>
@@ -177,7 +177,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint='(174) pmolperL or less'
+            android:hint='  (174) pmolperL or less'
             android:inputType="numberDecimal"
             
             android:layout_marginTop="30dp"/>
@@ -202,7 +202,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingStart="10dp"
-            android:hint="Enter 0 if you are male"
+            android:hint=" No. of Pregnancies till date"
             android:inputType="number"
             android:textColor="@color/Black"
             android:layout_marginTop="30dp"/>

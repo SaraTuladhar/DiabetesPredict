@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         pregnancyInput = (EditText) findViewById(R.id.pregnancyInput);
-        pregnancyInput.setFilters(new InputFilter[]{new RangeValidator("0", "12")});
+        pregnancyInput.setFilters(new InputFilter[]{new RangeValidator("0", "50")});
 
         glucoseInput = (EditText) findViewById(R.id.glucoseInput);
 
