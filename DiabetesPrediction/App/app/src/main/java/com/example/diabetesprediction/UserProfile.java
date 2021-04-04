@@ -24,40 +24,52 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import org.w3c.dom.Text;
 
 public class UserProfile extends AppCompatActivity {
-    TextView ProfilesignupName,  ProfilesignupEmail;
-    Button Backtopredict;
+    TextView ProfilesignupName,  ProfilesignupEmail,name,email;;
+    Button Backtopredict,logoutbtn;
     FirebaseAuth mAuth;
     FirebaseDatabase db;
     DatabaseReference reference;
     FirebaseUser fuser;
     User user;
+    String uid;
     private FirebaseAuth.AuthStateListener   myAuthStateListener;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_profile);
                 // Hooking
-        ProfilesignupName = (TextView) findViewById(R.id.proname);
-        ProfilesignupEmail = (TextView) findViewById(R.id.promail);
-        Backtopredict = (Button) findViewById(R.id.backtopredict);
+        ProfilesignupName = (TextView) findViewById(R.id.fullName);
+        ProfilesignupEmail = (TextView) findViewById(R.id.email);
+        name=(TextView)findViewById(R.id.userFullName);
+        email=(TextView)findViewById(R.id.userEmail);
+        logoutbtn=(Button)findViewById(R.id.logout);
+
+         Backtopredict = (Button) findViewById(R.id.backtopredict);
         mAuth = FirebaseAuth.getInstance();
         db = FirebaseDatabase.getInstance();
-      reference.getRef(mAuth.getUid());
+        uid=mAuth.getUid();
+        reference=db.getReference("User").child(uid);
+
+        //reference.getRef(mAuth.getUid());
 
        reference.addValueEventListener(new ValueEventListener() {
            @Override
            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                UserHelperClass userprofile = dataSnapshot.getValue(UserHelperClass.class);
-               ProfilesignupName.setText("Name: "+UserHelperClass.getSignupName());
-               ProfilesignupEmail.setText("Email: " +UserHelperClass.getSignupEmail());
-           }
+               User user = new User();
+               user = (User) dataSnapshot.getValue(User.class);
+               Log.d("TAG", "onDataChange: "+user.getSignupEmail());
+               ProfilesignupName.setText(user.getSignupName());
+               ProfilesignupEmail.setText(user.getSignupEmail());
+               name.setText(user.getSignupName());
+               email.setText(user.getSignupEmail());}
 
            @Override
            public void onCancelled(@NonNull DatabaseError databaseError) {
-Toast.makeText(UserProfile.this, databaseError.getCode(),Toast.LENGTH_SHORT);
-           }
+               Toast.makeText(UserProfile.this, databaseError.getCode(),Toast.LENGTH_SHORT); }
        });
         DatabaseReference rootRef = db.getReference();
        /* DownloadManager.Query query = rootRef.child("User").orderByChild("signupEmail").equalsTo(String.valueOf(fuser.getEmail()));
@@ -76,6 +88,22 @@ Toast.makeText(UserProfile.this, databaseError.getCode(),Toast.LENGTH_SHORT);
             }
         };
         query.addListenerForSingleValueEvent(valueEventListener);*/
+        logoutbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mAuth.getInstance().signOut();
+                finish();
+                Intent i = new Intent(UserProfile.this, login.class);
+                startActivity(i);
+            }
+        });
+        Backtopredict.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(UserProfile.this, Homepage.class);
+                startActivity(intent);
+            }
+        });
 
     }
 }

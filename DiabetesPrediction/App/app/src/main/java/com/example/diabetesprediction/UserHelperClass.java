@@ -45,17 +45,17 @@ public class UserHelperClass {
     }
 */
 
-    public static String getSignupName() {
-        return signupName;
-    }
+//    public static String getSignupName() {
+//        return signupName;
+//    }
 
     public void setSignupName(String signupName) {
         this.signupName = signupName;
     }
 
-    public static String getSignupEmail() {
-        return signupEmail;
-    }
+//    public static String getSignupEmail() {
+//        return signupEmail;
+//    }
 
     public void setSignupEmail(String signupEmail) {
         this.signupEmail = signupEmail;

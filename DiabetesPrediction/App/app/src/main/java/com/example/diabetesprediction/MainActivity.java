@@ -1,6 +1,7 @@
 package com.example.diabetesprediction;
 
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.content.Intent;
 import android.content.res.AssetFileDescriptor;
 import android.graphics.Color;
@@ -11,6 +12,7 @@ import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.TextView;
@@ -34,14 +36,14 @@ public class MainActivity extends AppCompatActivity {
     EditText bmiInput;
     EditText dpfInput;
     EditText ageInput;
-    int a=0;
+    int a = 0;
     float prediction;
 
     Button predictButton;
     Button toBmiCalc;
     TextView resultText;
     Interpreter tfLite;
-RadioButton radioButton,radioButton2;
+    RadioButton radioButton, radioButton2;
 
 
     @Override
@@ -50,19 +52,18 @@ RadioButton radioButton,radioButton2;
         setContentView(R.layout.activity_main);
 
         pregnancyInput = (EditText) findViewById(R.id.pregnancyInput);
-        pregnancyInput.setFilters(new InputFilter[]{ new RangeValidator("0", "12")});
+        pregnancyInput.setFilters(new InputFilter[]{new RangeValidator("0", "12")});
 
         glucoseInput = (EditText) findViewById(R.id.glucoseInput);
 
-
         bpInput = (EditText) findViewById(R.id.bpInput);
-        bpInput.setFilters(new InputFilter[]{ new RangeValidator("0", "200")});
+        bpInput.setFilters(new InputFilter[]{new RangeValidator("0", "200")});
 
         skinThickInput = (EditText) findViewById(R.id.skinThickInput);
-        skinThickInput.setFilters(new InputFilter[]{ new RangeValidator("0", "60")});
+        skinThickInput.setFilters(new InputFilter[]{new RangeValidator("0", "60")});
 
         insulinInput = (EditText) findViewById(R.id.insulinInput);
-        insulinInput.setFilters(new InputFilter[]{ new RangeValidator("0", "300")});
+        insulinInput.setFilters(new InputFilter[]{new RangeValidator("0", "300")});
 
         bmiInput = (EditText) findViewById(R.id.bmiInput);
 
@@ -70,7 +71,7 @@ RadioButton radioButton,radioButton2;
         dpfInput = (EditText) findViewById(R.id.dpfInput);
 
         ageInput = (EditText) findViewById(R.id.ageInput);
-        ageInput.setFilters(new InputFilter[]{ new RangeValidator("0", "130")});
+        ageInput.setFilters(new InputFilter[]{new RangeValidator("0", "130")});
 
         predictButton = (Button) findViewById(R.id.predictButton);
 
@@ -79,29 +80,32 @@ RadioButton radioButton,radioButton2;
 
         resultText = (TextView) findViewById(R.id.result);
 
-        radioButton=findViewById(R.id.radioButton);
+        radioButton = findViewById(R.id.radioButton);
 
-        radioButton2=findViewById(R.id.radioButton2);
+        radioButton2 = findViewById(R.id.radioButton2);
 
-
-
-        if(radioButton2.isChecked()){
-
+        eventHandling();
+        if (radioButton.isChecked()) {
             pregnancyInput.setEnabled(false);
             pregnancyInput.setFocusable(false);
-
             pregnancyInput.setCursorVisible(false);
-            pregnancyInput.setKeyListener(null);
             pregnancyInput.setFocusableInTouchMode(false);
-            pregnancyInput.setBackgroundColor(Color.TRANSPARENT);
+            pregnancyInput.setText("0");
+        }
+        if (radioButton2.isChecked()) {
 
+            pregnancyInput.setEnabled(true);
+            pregnancyInput.setFocusable(true);
+            pregnancyInput.setText("");
+            pregnancyInput.setCursorVisible(true);
+            pregnancyInput.setFocusableInTouchMode(true);
         }
 
         /* BMI calculator entry */
         toBmiCalc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent= new Intent(MainActivity.this, BMIcalculator.class);
+                Intent intent = new Intent(MainActivity.this, BMIcalculator.class);
                 startActivity(intent);
             }
         });
@@ -110,8 +114,7 @@ RadioButton radioButton,radioButton2;
             @Override
             public void onClick(View v) {
                 //error situation in case of empty
-                if (ageInput.length()==0||pregnancyInput.length()==0||glucoseInput.length()==0||bpInput.length()==0||skinThickInput.length()==0||bmiInput.length()==0||dpfInput.length()==0||insulinInput.length()==0)
-                {
+                if (ageInput.length() == 0 || pregnancyInput.length() == 0 || glucoseInput.length() == 0 || bpInput.length() == 0 || skinThickInput.length() == 0 || bmiInput.length() == 0 || dpfInput.length() == 0 || insulinInput.length() == 0) {
                     ageInput.setError("Empty");
                     pregnancyInput.setError("Empty");
                     glucoseInput.setError("Empty");
@@ -121,51 +124,36 @@ RadioButton radioButton,radioButton2;
                     dpfInput.setError("Empty");
                     insulinInput.setError("Empty");
                     a++;
-                }
-                else if (ageInput.length()==0)
-                {
+                } else if (ageInput.length() == 0) {
                     ageInput.setError("Empty");
                     a++;
-                }
-                else if (pregnancyInput.length()==0)
-                {
+                } else if (pregnancyInput.length() == 0) {
                     pregnancyInput.setError("Empty");
                     a++;
-                }
-               else if (glucoseInput.length()==0 || Double.parseDouble(glucoseInput.getText().toString())<0 || Double.parseDouble(glucoseInput.getText().toString())>300 )
-                {
+                } else if (glucoseInput.length() == 0 || Double.parseDouble(glucoseInput.getText().toString()) < 0 || Double.parseDouble(glucoseInput.getText().toString()) > 300) {
                     glucoseInput.setError("Empty");
 
-                    a++;}
-                else if (bpInput.length()==0)
-                {
+                    a++;
+                } else if (bpInput.length() == 0) {
                     bpInput.setError("Empty");
                     a++;
-                }
-                else if (skinThickInput.length()==0)
-                {
+                } else if (skinThickInput.length() == 0) {
                     skinThickInput.setError("Empty");
                     a++;
-                }
-                else if (bmiInput.length()==0 || Double.parseDouble(bmiInput.getText().toString())<0 || Double.parseDouble(bmiInput.getText().toString())>50 )
-                {
+                } else if (bmiInput.length() == 0 || Double.parseDouble(bmiInput.getText().toString()) < 0 || Double.parseDouble(bmiInput.getText().toString()) > 50) {
                     bmiInput.setError("Empty");
                     a++;
-                }
-                else if (dpfInput.length()==0 || Double.parseDouble(dpfInput.getText().toString())<0 || Double.parseDouble(dpfInput.getText().toString())>5) {
+                } else if (dpfInput.length() == 0 || Double.parseDouble(dpfInput.getText().toString()) < 0 || Double.parseDouble(dpfInput.getText().toString()) > 5) {
                     dpfInput.setError("Empty");
                     a++;
-                }
-                else if (insulinInput.length()==0) {
+                } else if (insulinInput.length() == 0) {
                     insulinInput.setError("Empty");
                     a++;
-                }
-                else
-                {
+                } else {
 
-                    Toast.makeText(MainActivity.this,"Recode added!", Toast.LENGTH_LONG);
+                    Toast.makeText(MainActivity.this, "Recode added!", Toast.LENGTH_LONG);
                     prediction = doInference();
-                    a=0;
+                    a = 0;
                 }
                 Log.d("value of a", String.valueOf(a));
 
@@ -186,7 +174,6 @@ RadioButton radioButton,radioButton2;
 //                startActivity(intent);
 
 
-
                 // Prediction failure. Show error message
 //                if (prediction == -1.0f) {
 //
@@ -195,32 +182,34 @@ RadioButton radioButton,radioButton2;
 //                    startActivity(intent);
 //                    return;
 //                };
-
+                int percentage = 0;
+                if (prediction != 0.0f) {
+                    percentage = (int) prediction * 100;
+                }
                 // Prediction success. Show appropriate message
-                String result = prediction == 0.0f ? "No Diabetes. You seem to be fine.\n\n" +
-                        "Since your blood glucose level, blood Pressure, insulin level, and  bmi are below the recommended threshold," +
-                        " Your chance of having diabetes in the near future reduces by 25%\n ":
-                        "Since your blood glucose level, blood Pressure, insulin level, or  bmi are above the recommended threshold, " + "Oh no! You are at risk of having diabetes.\n\n" +
-                        "You have a 50% more chance of having diabetes in the near future \n ";
+                String result = prediction == 0.0f ? " Your chance of having diabetes in the near future is " + percentage + "%\n "+"Since your blood glucose level, blood Pressure, insulin level, or  bmi are below the recommended threshold." :
+                        " Your chance of having diabetes in the near future is " + percentage + "%\n "+"Since your blood glucose level, blood Pressure, insulin level, or  bmi are above the recommended threshold." + "Oh no! You are at risk of having diabetes.\n\n" ;
 
 
                 /*Intent intent1 = new Intent(getBaseContext(), MainActivity.class);
 
                 startActivity(intent);*/
-
+                Log.d("Prediction", String.valueOf(prediction));
                 //The idea is to go to the resultdisplay activity for viewing the result
                 Log.d("value of a", String.valueOf(a));
-                if(a==0){
-                Intent intent= new Intent(MainActivity.this, Resultdisplay.class);
-                intent.putExtra(EXTRA_TEXT, result);
-                startActivity(intent);
+                if (a == 0) {
 
-            }}
+                    Intent intent = new Intent(MainActivity.this, Resultdisplay.class);
+                    intent.putExtra(EXTRA_TEXT, result);
+                    startActivity(intent);
+
+                }
+            }
         });
 
-        try{
+        try {
             tfLite = new Interpreter((loadModelFile()));
-        } catch (Exception ex){
+        } catch (Exception ex) {
             ex.printStackTrace();
         }
     }
@@ -246,10 +235,10 @@ RadioButton radioButton,radioButton2;
 
             tfLite.run(inputs, output);
 
-            // If output is >0.5f, then the person has diabetes
-            if (output[0][0] > 0.5f) return 1.0f;
-            return 0.0f;
-
+//            // If output is >0.5f, then the person has diabetes
+//            if (output[0][0] > 0.5f) return 1.0f;
+//            return 0.0f;
+            return output[0][0]*100.0f;
 
 
         } catch (Exception e) {
@@ -258,12 +247,43 @@ RadioButton radioButton,radioButton2;
         }
     }
 
+    private void eventHandling() {
+        radioButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (radioButton.isChecked()) {
+
+                    pregnancyInput.setEnabled(false);
+                    pregnancyInput.setFocusable(false);
+
+                    pregnancyInput.setCursorVisible(false);
+
+                    pregnancyInput.setFocusableInTouchMode(false);
+                    pregnancyInput.setText("0");
+
+                }
+            }
+        });
+        radioButton2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (radioButton2.isChecked()) {
+                    pregnancyInput.setEnabled(true);
+                    pregnancyInput.setFocusable(true);
+                    pregnancyInput.setText("");
+                    pregnancyInput.setCursorVisible(true);
+                    pregnancyInput.setFocusableInTouchMode(true);
+                }
+            }
+        });
+    }
+
     private MappedByteBuffer loadModelFile() throws IOException {
-        AssetFileDescriptor fileDescriptor = this.getAssets().openFd( "working_model.tflite");
+        AssetFileDescriptor fileDescriptor = this.getAssets().openFd("working_model.tflite");
         FileInputStream inputStream = new FileInputStream(fileDescriptor.getFileDescriptor());
         FileChannel fileChannel = inputStream.getChannel();
         long startOffset = fileDescriptor.getStartOffset();
         long declaredLength = fileDescriptor.getDeclaredLength();
-        return fileChannel.map(FileChannel.MapMode.READ_ONLY,startOffset, declaredLength);
+        return fileChannel.map(FileChannel.MapMode.READ_ONLY, startOffset, declaredLength);
     }
 }

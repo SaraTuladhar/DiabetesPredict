@@ -19,7 +19,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".Signup" />
-        <activity android:name=".UserProfile" />
+        <activity android:name=".UserProfile"
+            android:theme="@style/Theme.MaterialComponents.Light.NoActionBar"
+            />
         <activity android:name=".login" />
         <activity android:name=".Homepage" />
         <activity android:name=".MainActivity" />
