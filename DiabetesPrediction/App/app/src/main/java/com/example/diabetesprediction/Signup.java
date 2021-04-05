@@ -46,8 +46,6 @@ public class Signup extends AppCompatActivity {
         user = new User();
         reference = FirebaseDatabase.getInstance().getReference().child("User");
 
-        /*tologin.setOnClickListener(this);*/
-        //reg.setOnClickListener(this);
 
         reg.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -134,42 +132,3 @@ public class Signup extends AppCompatActivity {
 
 
 
-        /*reg.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                rootNode= FirebaseDatabase.getInstance();
-                reference=rootNode.getReference("users");
-                // Get all values
-                String Name=(signupName.getText().toString());
-                String UserName=(signupUsername.getText().toString());
-                String Email=(signupEmail.getText().toString());
-                String Password=(signupPassword.getText().toString());
-
-             UserHelperClass helperclass= new UserHelperClass();
-             reference.child(UserName).setValue(helperclass);
-            }
-        });*/
-
-
-/*
-@Override
-public void onClick(View v) {
-
-    if (v == tologin) {
-
-        Intent intent = new Intent(Signup.this, login.class);
-        startActivity(intent);
-
-
-    } else if (v == reg) {
-       */
-/* Intent intent= new Intent(Signup.this, login.class);
-        startActivity(intent);*//*
-
-
-        }
-    }
-}
-*/
-
-   
