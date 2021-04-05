@@ -27,7 +27,7 @@ import com.google.firebase.database.ValueEventListener;
 import org.w3c.dom.Text;
 
 public class UserProfile extends AppCompatActivity {
-    TextView ProfilesignupName,  ProfilesignupEmail,name,email;;
+    TextView ProfilesignupName,  ProfilesignupEmail,name,email, Previousresult ;;
     Button Backtopredict,logoutbtn;
     FirebaseAuth mAuth;
     FirebaseDatabase db;
@@ -35,7 +35,7 @@ public class UserProfile extends AppCompatActivity {
     FirebaseUser fuser;
     User user;
     String uid;
-    private FirebaseAuth.AuthStateListener   myAuthStateListener;
+    private FirebaseAuth.AuthStateListener  myAuthStateListener;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,11 +43,14 @@ public class UserProfile extends AppCompatActivity {
                 // Hooking
         ProfilesignupName = (TextView) findViewById(R.id.fullName);
         ProfilesignupEmail = (TextView) findViewById(R.id.email);
+        Previousresult=(TextView)findViewById(R.id.previousresult);
+
         name=(TextView)findViewById(R.id.userFullName);
         email=(TextView)findViewById(R.id.userEmail);
+
         logoutbtn=(Button)findViewById(R.id.logout);
 
-         Backtopredict = (Button) findViewById(R.id.backtopredict);
+        Backtopredict = (Button) findViewById(R.id.backtopredict);
         mAuth = FirebaseAuth.getInstance();
         db = FirebaseDatabase.getInstance();
         uid=mAuth.getUid();
@@ -64,6 +67,7 @@ public class UserProfile extends AppCompatActivity {
                Log.d("TAG", "onDataChange: "+user.getSignupEmail());
                ProfilesignupName.setText(user.getSignupName());
                ProfilesignupEmail.setText(user.getSignupEmail());
+               Previousresult.setText(user.getResult());
                name.setText(user.getSignupName());
                email.setText(user.getSignupEmail());}
 
