@@ -4,16 +4,19 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class BMIcalculator extends AppCompatActivity {
     EditText height, weight;
     TextView bmiresultdisplay;
     String BMIresult, calculation;
     Button backtoinput, calculatebmi;
+    float a = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,10 +40,29 @@ public class BMIcalculator extends AppCompatActivity {
         calculatebmi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                if (height.length() == 0|| weight.length() == 0) {
+                    height.setError("Empty");
+                    weight.setError("Empty");
+                    a++;
+                }
+                else if (height.length() == 0) {
+                    height.setError("Empty");
+                    a++;
+                }
+                else if (weight.length() == 0) {
+                    weight.setError("Empty");
+                    a++;
+                }
+                else {
+
+                    Toast.makeText(BMIcalculator.this, "Calculated!", Toast.LENGTH_LONG);
+                    a = 0;
+                }
+                Log.d("value of a", String.valueOf(a));
                 calculateBMI();
             }
             /*float data=  calculateBMI();*/
-
 
     public void calculateBMI() {
         String s2 = weight.getText().toString();

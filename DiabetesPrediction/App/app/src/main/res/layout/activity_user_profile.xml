@@ -19,6 +19,14 @@
             >
 
             <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="WELCOME!"
+                android:textColor="@color/colorPrimary"
+                android:textSize="25dp"
+                android:layout_marginTop="60dp"/>
+
+            <TextView
                 android:id="@+id/userFullName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -97,34 +105,21 @@
 
 
             </com.google.android.material.textfield.TextInputLayout>
-            <com.google.android.material.textfield.TextInputLayout
+           <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Contact"
+                android:hint="Your previous prediction is:"
                 android:layout_marginBottom="10dp"
                 android:clickable="false"
-                android:focusable="false"
-                android:focusableInTouchMode="false"
-                android:longClickable="false"
-                >
+               android:textColor="@color/Black"
+               android:textSize="18dp"
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:editable="false"
-                    android:clickable="false"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/contact"
-                    android:focusable="false"
-                    android:focusableInTouchMode="false"
-                    android:longClickable="false"
                     />
 
 
-            </com.google.android.material.textfield.TextInputLayout>
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Date of Birth"
                 android:layout_marginBottom="10dp"
                 android:clickable="false"
                 android:focusable="false"
@@ -138,7 +133,7 @@
                     android:textCursorDrawable="@null"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/DOB"
+                    android:id="@+id/previousresult"
                     android:focusable="false"
                     android:focusableInTouchMode="false"
                     android:longClickable="false"
@@ -151,7 +146,17 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Back to Predict"
-                android:id="@+id/backtopredict"/>
+                android:id="@+id/backtopredict"
+                android:backgroundTint="@color/colorPrimary"
+                android:textColor="@color/white"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/logout"
+                android:text="Logout"
+                android:backgroundTint="@color/colorPrimary"
+                android:textColor="@color/white"
+                />
 
 
         </LinearLayout>

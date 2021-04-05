@@ -46,7 +46,7 @@ public class UserHelperClass {
 */
 
 //    public static String getSignupName() {
-//        //return signupName;
+//        return signupName;
 //    }
 
     public void setSignupName(String signupName) {

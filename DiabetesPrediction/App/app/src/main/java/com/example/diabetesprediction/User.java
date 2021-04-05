@@ -1,7 +1,22 @@
 package com.example.diabetesprediction;
 
 public class User {
-    public String signupName, signupUsername, signupEmail, signupPassword, signupPassword2;
+    public String signupName;
+    public String signupUsername;
+    public String signupEmail;
+    public String signupPassword;
+    public String signupPassword2;
+    public String result;
+
+    public String getResult() {
+        return result;
+    }
+
+    public void setResult(String result) {
+        this.result = result;
+    }
+
+
 public User(){ }
     public String getSignupName() {
         return signupName;

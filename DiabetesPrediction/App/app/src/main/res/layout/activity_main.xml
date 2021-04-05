@@ -1,37 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--<androidx.appcompat.widget.LinearLayoutCompat xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/homepage_back"
-    tools:context=".MainActivity">
-    <TextView
-        android:id="@+id/Age"
-        android:text="Age:"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        />
-    <TextView
-        android:text=""
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-
-
-
-</androidx.appcompat.widget.LinearLayoutCompat>-->
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingStart="24dp"
+    android:paddingEnd="24dp"
     android:background="@drawable/homepage_back"
     android:orientation="vertical"
     tools:context=".MainActivity"
     android:layout_centerInParent="true">
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <TextView
@@ -41,24 +26,22 @@
             android:text="Age:"
             android:textColor="@color/Black"
             android:textSize="18sp"
-            android:layout_marginLeft="70dp"
             android:layout_marginTop="30dp"
              />
+
         <EditText
             android:id="@+id/ageInput"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="Years"
-            android:inputType="textPersonName"
-            android:textSize="18sp"
-            android:layout_marginLeft="70dp"
             android:layout_marginTop="30dp"
-            />
+            android:ems="10"
+            android:hint="  Years"
+            android:inputType="number"
+            android:textSize="18sp" />
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <TextView
             android:id="@+id/textView2"
@@ -67,22 +50,22 @@
             android:text="Glucose:"
             android:textColor="@color/Black"
             android:textSize="18sp"
-            android:layout_marginLeft="70dp"
+            
             android:layout_marginTop="30dp"/>
 
         <EditText
             android:id="@+id/glucoseInput"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="(70-140) in mg/dL"
+            android:hint=" (70-140) in mg/dL"
             android:inputType="numberDecimal"
-            android:layout_marginLeft="70dp"
+            
             android:layout_marginTop="30dp"/>
 
     </LinearLayout>
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <TextView
             android:id="@+id/textView7"
@@ -91,23 +74,23 @@
             android:text="Pedigree Function:"
             android:textColor="@color/Black"
             android:textSize="18sp"
-            android:layout_marginLeft="70dp"
+            
             android:layout_marginTop="30dp"
             />
 
         <EditText
             android:id="@+id/dpfInput"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint=""
+            android:hint="  0-1"
             android:inputType="numberDecimal"
-            android:layout_marginLeft="70dp"
+            
             android:layout_marginTop="30dp"/>
 
     </LinearLayout>
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <TextView
             android:id="@+id/textView3"
@@ -116,23 +99,23 @@
             android:text="Blood Pressure :"
             android:textColor="@color/Black"
             android:textSize="18sp"
-            android:layout_marginLeft="70dp"
+            
             android:layout_marginTop="30dp"/>
 
 
         <EditText
             android:id="@+id/bpInput"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="(Systolic 100-120) in mm Hg"
-            android:inputType="textPersonName"
-            android:layout_marginLeft="70dp"
+            android:inputType="number"
+            
             android:layout_marginTop="30dp"/>
 
     </LinearLayout>
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <TextView
@@ -142,7 +125,7 @@
             android:text="Body Mass Index:"
             android:textColor="@color/Black"
             android:textSize="18sp"
-            android:layout_marginLeft="70dp"
+            
             android:layout_marginTop="30dp"/>
 
         <EditText
@@ -150,14 +133,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="(16-25) Kg/cm "
-            android:inputType="numberDecimal"
-            android:layout_marginLeft="70dp"
+            android:hint="  (16-25) Kg/cm "
+            android:inputType="number"
+            
             android:layout_marginTop="30dp"/>
 
     </LinearLayout>
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <TextView
             android:id="@+id/textView6"
@@ -166,7 +149,7 @@
             android:text="Skin Fold Thickness:"
             android:textColor="@color/Black"
             android:textSize="17sp"
-            android:layout_marginLeft="70dp"
+            
             android:layout_marginTop="30dp"/>
 
         <EditText
@@ -174,14 +157,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="(20-40) mm"
-            android:inputType="textPersonName"
-            android:layout_marginLeft="70dp"
+            android:hint="  (20-40) mm"
+            android:inputType="number"
+            
             android:layout_marginTop="30dp"/>
 
     </LinearLayout>
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <TextView
             android:id="@+id/textView5"
@@ -190,7 +173,7 @@
             android:text="Insulin:"
             android:textColor="@color/Black"
             android:textSize="18sp"
-            android:layout_marginLeft="70dp"
+            
             android:layout_marginTop="30dp"/>
 
         <EditText
@@ -198,15 +181,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint='(174) pmolperL or less'
-            android:inputType="textPersonName"
-            android:layout_marginLeft="70dp"
+            android:hint='  (174) pmolperL or less'
+            android:inputType="numberDecimal"
+            
             android:layout_marginTop="30dp"/>
 
 
     </LinearLayout>
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <TextView
             android:id="@+id/textView"
@@ -215,22 +198,22 @@
             android:text="No. of Pregnancy:"
             android:textColor="@color/Black"
             android:textSize="18sp"
-            android:layout_marginLeft="70dp"
+            
             android:layout_marginTop="30dp"/>
 
         <EditText
             android:id="@+id/pregnancyInput"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="Enter 0 if you are male"
-            android:inputType="textPersonName"
-            android:layout_marginLeft="70dp"
+            android:paddingStart="10dp"
+            android:hint=" No. of Pregnancies till date"
+            android:inputType="number"
+            android:textColor="@color/Black"
             android:layout_marginTop="30dp"/>
 
     </LinearLayout>
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <TextView
@@ -240,7 +223,7 @@
             android:text="Gender:"
             android:textColor="@color/Black"
             android:textSize="18sp"
-            android:layout_marginLeft="70dp"
+            
             android:layout_marginTop="30dp"/>
 
         <RadioGroup
@@ -254,7 +237,7 @@
                 android:layout_height="wrap_content"
                 android:text="Male"
                 tools:ignore="MissingConstraints"
-                android:layout_marginLeft="70dp"
+                android:checked="true"
                 android:layout_marginTop="30dp"/>
 
             <RadioButton
@@ -264,7 +247,7 @@
                 android:text="Female"
                 app:layout_constraintStart_toEndOf="@+id/radioButton"
                 app:layout_constraintTop_toBottomOf="@+id/dpfInput"
-                android:layout_marginLeft="70dp"
+                
                 android:layout_marginTop="30dp"/>
 
         </RadioGroup>
@@ -274,6 +257,7 @@
 
     <LinearLayout
         android:layout_width="wrap_content"
+        android:layout_gravity="center_horizontal"
         android:layout_height="wrap_content">
 
         <Button
@@ -284,7 +268,7 @@
             android:text="Calculate BMI"
             android:textColor="@color/White"
             android:textColorHint="@color/White"
-            android:layout_marginLeft="70dp"
+            
             android:layout_marginTop="30dp"/>
         <Button
             android:id="@+id/predictButton"
@@ -294,11 +278,11 @@
             android:text="Predict"
             android:textColor="@color/White"
             android:textSize="15sp"
-            android:layout_marginLeft="70dp"
+            
             android:layout_marginTop="30dp"/>
 
     </LinearLayout>
 
 
 </LinearLayout>
-
+</ScrollView>

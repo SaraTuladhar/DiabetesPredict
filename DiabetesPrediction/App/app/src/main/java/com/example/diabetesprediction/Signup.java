@@ -46,8 +46,6 @@ public class Signup extends AppCompatActivity {
         user = new User();
         reference = FirebaseDatabase.getInstance().getReference().child("User");
 
-        /*tologin.setOnClickListener(this);*/
-        //reg.setOnClickListener(this);
 
         reg.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -88,8 +86,9 @@ public class Signup extends AppCompatActivity {
                     user.setSignupEmail(signupEmail.getText().toString().trim());
                     user.setSignupPassword(signupPassword.getText().toString().trim());
                     user.setSignupPassword2(signupPassword2.getText().toString().trim());
+                    String key = reference.child("User").push().getKey();
+                    reference.child(key).setValue(user);
                     //String key = reference.child("User").push().getKey();
-
                     /*String key2 = reference.child("Data").push().getKey();*/
                     /*reference.child(key2).setValue(user);*/
                     mAuth.createUserWithEmailAndPassword(Email, Password2).addOnCompleteListener(Signup.this, new OnCompleteListener<AuthResult>() {
@@ -133,42 +132,3 @@ public class Signup extends AppCompatActivity {
 
 
 
-        /*reg.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                rootNode= FirebaseDatabase.getInstance();
-                reference=rootNode.getReference("users");
-                // Get all values
-                String Name=(signupName.getText().toString());
-                String UserName=(signupUsername.getText().toString());
-                String Email=(signupEmail.getText().toString());
-                String Password=(signupPassword.getText().toString());
-
-             UserHelperClass helperclass= new UserHelperClass();
-             reference.child(UserName).setValue(helperclass);
-            }
-        });*/
-
-
-/*
-@Override
-public void onClick(View v) {
-
-    if (v == tologin) {
-
-        Intent intent = new Intent(Signup.this, login.class);
-        startActivity(intent);
-
-
-    } else if (v == reg) {
-       */
-/* Intent intent= new Intent(Signup.this, login.class);
-        startActivity(intent);*//*
-
-
-        }
-    }
-}
-*/
-
-   
