@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+
 public class BMIcalculator extends AppCompatActivity {
     EditText height, weight;
     TextView bmiresultdisplay;

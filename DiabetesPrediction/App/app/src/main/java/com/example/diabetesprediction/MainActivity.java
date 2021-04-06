@@ -4,26 +4,30 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.content.res.AssetFileDescriptor;
-import android.graphics.Color;
+
 import android.os.Bundle;
-import android.text.Editable;
 import android.text.InputFilter;
-import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
-
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import org.tensorflow.lite.Interpreter;
-
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.nio.MappedByteBuffer;
 import java.nio.channels.FileChannel;
+import java.text.DecimalFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.HashMap;
+import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
     public static final String EXTRA_TEXT = "com.example.diabetesprediction.EXTRA_TEXT";
@@ -44,12 +48,22 @@ public class MainActivity extends AppCompatActivity {
     TextView resultText;
     Interpreter tfLite;
     RadioButton radioButton, radioButton2;
+    FirebaseAuth mAuth;
+    FirebaseDatabase db;
+    DatabaseReference reference;
+    FirebaseUser fuser;
+    User user;
+    String uid;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        mAuth = FirebaseAuth.getInstance();
+        db = FirebaseDatabase.getInstance();
+        uid=mAuth.getUid();
+        reference=db.getReference("User").child(uid);
 
         pregnancyInput = (EditText) findViewById(R.id.pregnancyInput);
         pregnancyInput.setFilters(new InputFilter[]{new RangeValidator("0", "50")});
@@ -157,17 +171,6 @@ public class MainActivity extends AppCompatActivity {
                 }
                 Log.d("value of a", String.valueOf(a));
 
-               /* //radiobutton
-                if(radioButton.isChecked())
-                {
-                    Toast.makeText(getApplicationContext(),""+radioButton.getText().toString(),Toast.LENGTH_SHORT);
-
-                }
-                else if(radioButton2.isChecked())
-                {
-                    Toast.makeText(getApplicationContext(),""+radioButton2.getText().toString(),Toast.LENGTH_SHORT);
-                }
-*/
 
                 //directing to Homepage which will in turn direct it to thi main page where all the data will be input
 //                Intent intent= new Intent(MainActivity.this, Homepage.class);
@@ -182,14 +185,18 @@ public class MainActivity extends AppCompatActivity {
 //                    startActivity(intent);
 //                    return;
 //                };
-                int percentage = 0;
-                if (prediction != 0.0f) {
-                    percentage = (int) prediction * 100;
-                }
-                // Prediction success. Show appropriate message
-                String result = prediction == 0.0f ? " Your chance of having diabetes in the near future is " + percentage + "%\n "+"Since your blood glucose level, blood Pressure, insulin level, or  bmi are below the recommended threshold." :
+                int percentage =  (int) prediction;
+                String result = prediction < 50 ? " Your chance of having diabetes in the near future is " + percentage + "%\n "+"Since your blood glucose level, blood Pressure, insulin level, or  bmi are below the recommended threshold." :
                         " Your chance of having diabetes in the near future is " + percentage + "%\n "+"Since your blood glucose level, blood Pressure, insulin level, or  bmi are above the recommended threshold." + "Oh no! You are at risk of having diabetes.\n\n" ;
 
+                /*int percentage = 0;
+                if (prediction != 0.0f) {
+                    percentage = (int) prediction * 10;
+                }*/
+                // Prediction success. Show appropriate message
+                /*String result = prediction == 0.0f ? " Your chance of having diabetes in the near future is " + percentage + "%\n "+"Since your blood glucose level, blood Pressure, insulin level, or  bmi are below the recommended threshold." :
+                        " Your chance of having diabetes in the near future is " + percentage + "%\n "+"Since your blood glucose level, blood Pressure, insulin level, or  bmi are above the recommended threshold." + "Oh no! You are at risk of having diabetes.\n\n" ;
+*/
 
                 /*Intent intent1 = new Intent(getBaseContext(), MainActivity.class);
 
@@ -236,9 +243,9 @@ public class MainActivity extends AppCompatActivity {
             tfLite.run(inputs, output);
 
 //            // If output is >0.5f, then the person has diabetes
-//            if (output[0][0] > 0.5f) return 1.0f;
-//            return 0.0f;
-            return output[0][0]*100.0f;
+              if (output[0][0] > 0.5f) return 1.0f;
+              return 0.0f;
+          /*  return output[0][0]*10.0f;*/
 
 
         } catch (Exception e) {
@@ -259,7 +266,11 @@ public class MainActivity extends AppCompatActivity {
                     pregnancyInput.setCursorVisible(false);
 
                     pregnancyInput.setFocusableInTouchMode(false);
+                    pregnancyInput.setVisibility(View.INVISIBLE);
                     pregnancyInput.setText("0");
+
+
+
 
                 }
             }
@@ -273,6 +284,7 @@ public class MainActivity extends AppCompatActivity {
                     pregnancyInput.setText("");
                     pregnancyInput.setCursorVisible(true);
                     pregnancyInput.setFocusableInTouchMode(true);
+                    pregnancyInput.setVisibility(View.VISIBLE);
                 }
             }
         });
