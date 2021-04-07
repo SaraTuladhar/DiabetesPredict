@@ -177,18 +177,19 @@ public class MainActivity extends AppCompatActivity {
 //                startActivity(intent);
 
 
-                // Prediction failure. Show error message
-//                if (prediction == -1.0f) {
+                //Prediction failure. Show error message
+//              if (prediction == -1.0f) {
 //
 //                    intent= new Intent(MainActivity.this, Resultdisplay.class);
 //                    intent.putExtra(EXTRA_TEXT, "Error: Please check your inputs!");
 //                    startActivity(intent);
 //                    return;
 //                };
-                int percentage =  (int) prediction;
-                String result = prediction < 50 ? " Your chance of having diabetes in the near future is " + percentage + "%\n "+"Since your blood glucose level, blood Pressure, insulin level, or  bmi are below the recommended threshold." :
-                        " Your chance of having diabetes in the near future is " + percentage + "%\n "+"Since your blood glucose level, blood Pressure, insulin level, or  bmi are above the recommended threshold." + "Oh no! You are at risk of having diabetes.\n\n" ;
-
+                /*1. int percentage =  (int) prediction;*/
+                /*2.String result = prediction < 50 ? " Your chance of having diabetes in the near future is " + percentage + "%\n "+"Since your blood glucose level, blood Pressure, insulin level, or  bmi are below the recommended threshold." :
+                        " Your chance of having diabetes in the near future is " + percentage + "%\n "+"Since your blood glucose level, blood Pressure, insulin level, or  bmi are above the recommended threshold." + "Oh no! You are at risk of having diabetes.\n\n" ;*/
+                // Prediction success. Show appropriate message
+                String result = prediction == 0.0f ? "No Diabetes. You seem to be fine." : "Shit! You have diabetes.";
                 /*int percentage = 0;
                 if (prediction != 0.0f) {
                     percentage = (int) prediction * 10;
@@ -201,7 +202,9 @@ public class MainActivity extends AppCompatActivity {
                 /*Intent intent1 = new Intent(getBaseContext(), MainActivity.class);
 
                 startActivity(intent);*/
-                Log.d("Prediction", String.valueOf(prediction));
+
+                /*3. Log.d("Prediction", String.valueOf(prediction));
+*/
                 //The idea is to go to the resultdisplay activity for viewing the result
                 Log.d("value of a", String.valueOf(a));
                 if (a == 0) {
