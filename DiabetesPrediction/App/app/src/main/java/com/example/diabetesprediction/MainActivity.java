@@ -177,19 +177,18 @@ public class MainActivity extends AppCompatActivity {
 //                startActivity(intent);
 
 
-                //Prediction failure. Show error message
-//              if (prediction == -1.0f) {
+                // Prediction failure. Show error message
+//                if (prediction == -1.0f) {
 //
 //                    intent= new Intent(MainActivity.this, Resultdisplay.class);
 //                    intent.putExtra(EXTRA_TEXT, "Error: Please check your inputs!");
 //                    startActivity(intent);
 //                    return;
 //                };
-                /*1. int percentage =  (int) prediction;*/
-                /*2.String result = prediction < 50 ? " Your chance of having diabetes in the near future is " + percentage + "%\n "+"Since your blood glucose level, blood Pressure, insulin level, or  bmi are below the recommended threshold." :
-                        " Your chance of having diabetes in the near future is " + percentage + "%\n "+"Since your blood glucose level, blood Pressure, insulin level, or  bmi are above the recommended threshold." + "Oh no! You are at risk of having diabetes.\n\n" ;*/
-                // Prediction success. Show appropriate message
-                String result = prediction == 0.0f ? "No Diabetes. You seem to be fine." : "Shit! You have diabetes.";
+                int percentage =  (int) prediction;
+                String result = prediction < 50 ? " Your chance of having diabetes in the near future is " + percentage + "%\n "+"Since your blood glucose level, blood Pressure, insulin level, or  bmi are below the recommended threshold." :
+                        " Your chance of having diabetes in the near future is " + percentage + "%\n "+"Since your blood glucose level, blood Pressure, insulin level, or  bmi are above the recommended threshold." + "Oh no! You are at risk of having diabetes.\n\n" ;
+
                 /*int percentage = 0;
                 if (prediction != 0.0f) {
                     percentage = (int) prediction * 10;
@@ -203,8 +202,8 @@ public class MainActivity extends AppCompatActivity {
 
                 startActivity(intent);*/
 
-                /*3. Log.d("Prediction", String.valueOf(prediction));
-*/
+                Log.d("Prediction", String.valueOf(prediction));
+
                 //The idea is to go to the resultdisplay activity for viewing the result
                 Log.d("value of a", String.valueOf(a));
                 if (a == 0) {
@@ -223,6 +222,7 @@ public class MainActivity extends AppCompatActivity {
             ex.printStackTrace();
         }
     }
+
 
     public float doInference() {
         try {
@@ -246,9 +246,9 @@ public class MainActivity extends AppCompatActivity {
             tfLite.run(inputs, output);
 
 //            // If output is >0.5f, then the person has diabetes
-              if (output[0][0] > 0.5f) return 1.0f;
-              return 0.0f;
-          /*  return output[0][0]*10.0f;*/
+              if (output[0][0] > 50) return 1.0f;
+              /*return 0.0f;*/
+            return output[0][0]*100.0f;
 
 
         } catch (Exception e) {
@@ -270,7 +270,7 @@ public class MainActivity extends AppCompatActivity {
 
                     pregnancyInput.setFocusableInTouchMode(false);
                     pregnancyInput.setVisibility(View.INVISIBLE);
-                    pregnancyInput.setText("0");
+                    pregnancyInput.setText("2");
 
 
 
@@ -284,7 +284,6 @@ public class MainActivity extends AppCompatActivity {
                 if (radioButton2.isChecked()) {
                     pregnancyInput.setEnabled(true);
                     pregnancyInput.setFocusable(true);
-                    pregnancyInput.setText("");
                     pregnancyInput.setCursorVisible(true);
                     pregnancyInput.setFocusableInTouchMode(true);
                     pregnancyInput.setVisibility(View.VISIBLE);
@@ -294,7 +293,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private MappedByteBuffer loadModelFile() throws IOException {
-        AssetFileDescriptor fileDescriptor = this.getAssets().openFd("working_model.tflite");
+        AssetFileDescriptor fileDescriptor = this.getAssets().openFd("working_model1.tflite");
         FileInputStream inputStream = new FileInputStream(fileDescriptor.getFileDescriptor());
         FileChannel fileChannel = inputStream.getChannel();
         long startOffset = fileDescriptor.getStartOffset();
